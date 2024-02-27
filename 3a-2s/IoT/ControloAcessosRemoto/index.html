@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acesso de Controlos</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+
+    .buttonApprove {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .buttonDeny {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    .status {
+      margin-left: 10px;
+    }
+
+    .status.approved {
+      color: green;
+      font-weight: bold;
+    }
+
+    .status.denied {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">IoT Controlo de Acessos</div>
+    {% for tag in tags %}
+    <div class="tag">
+      <button class="buttonApprove" onclick="changeAccess('{{ tag }}', 'approved')">Approve Access</button>
+      <p>{{ tag }}</p>
+      <button class="buttonDeny" onclick="changeAccess('{{ tag }}', 'denied')">Deny Access</button>
+      <span class="status {% if tags[tag] == 'approved' %}approved{% else %}denied{% endif %}">{{ tags[tag] }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    //função para enviar os dados da tag para o backend
+    function changeAccess(tag, value) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            location.reload();
+        }
+      };
+      xhttp.open("POST", "/change-access", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("tag=" + encodeURIComponent(tag) + "&value=" + encodeURIComponent(value));
+    }
+  </script>
+</body>
+</html>
