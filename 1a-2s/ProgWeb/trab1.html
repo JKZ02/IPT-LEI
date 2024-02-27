@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<script>
+			//Base de dados sobre vídeos no YouTube constituída por um array de objetos {titl, refa, dscr, durac, ano, nvis}, em que, "titl" é o título do vídeo, "refa"  é o código de referência do vídeo, com 11 caracteres, "dscr" é um texto de descrição do vídeo (preferencialmente, entre 20 e 100 palavras), "durac" é a duração do vídeo em minutos inteiros, "ano" é o ano de publicação do vídeo e "nvis" é o número de visualizações arredondado por excesso aos milhares.
+			var BDVYT = [
+				{
+					titl:"History and Evolution of Programming languages",
+					refa:"Pn5znSOGHcs",
+					dscr:"We have a long history of computers and computer programming languages since 18th Century since first computer was invented in this video i have covered most of the languages that used alot in development and help in evolving new languages",
+					durac:7,
+					ano:2019,
+					nvis:38000,
+				},
+				{
+					titl:"The Evolution of Programming",
+					refa:"4vtHRJSNp04",
+					dscr:"The hows and whens of the evolution of Programming as we know it today",
+					durac:3,
+					ano:2014,
+					nvis:5000,
+				},
+				{
+					titl:"Most Popular Programming Languages 1965 - 2019",
+					refa:"Og847HVwRSI",
+					dscr:"Timeline of the most popular programming languages since 1965 to 2019.",
+					durac:5,
+					ano:2019,
+					nvis:5548000,
+				},
+				{
+					titl:"The Brief History of Programming Languages",
+					refa:"mhpslN-OD_o",
+					dscr:"As someone famous once said somewhere; to know where you are going, you have to know where you have been. Therefore, whether you're studying computer science in college, you're a programming language enthusiast or a history buff; the brief history of programming languages will satisfy your unquenchable thirst for knowledge.",
+					durac:16,
+					ano:2020,
+					nvis:30000,
+				},
+				{
+					titl:"The History Of Computers, Programming, and Coding",
+					refa:"M4d3FXu9-3I",
+					dscr:"Did you know the history of computers dates back to the early 1800s? Charles Babbage theorized it, Ada Lovelace appended it, Herman Hollerith counted it, Konrad Zuse built upon it, Howard Aiken added his spin, and Bill Gates and Steve Jobs sold it!",
+					durac:45,
+					ano:2019,
+					nvis:87000,
+				},
+				{
+					titl:"The Generations of Programming Languages | Computer Science History",
+					refa:"ZFIeEV2HfPQ",
+					dscr:"Programming languages have progressed exponentially over the past half-century. The way you understand programming languages is split into high-level & low-level. But within that, there are five generations of programming languages. 1st, 2nd, 3rd, 4th, 5th... pretty easy right? Whereas the 1st & 2nd being low-level languages. And the 3rd, 4th, 5th being high-level languages. You'll notice it progresses as it did through time, with machine language, assembly, Java, Python, and now with these visual tool programming languages. ",
+					durac:13,
+					ano:2020,
+					nvis:25000,
+				},
+				{
+					titl:"How Are Programming Languages Created | Evolution Of Code",
+					refa:"yKyOWBkf3io",
+					dscr:"We all know programming languages, but do you know how programming languages have come about?",
+					durac:5,
+					ano:2016,
+					nvis:64000,
+				},
+				{
+					titl:"Top 10 Programming Languages In 2021| Best Programming Languages To Learn In 2021 | Simplilearn",
+					refa:"D7YMSt2ntWY",
+					dscr:"This Simplilearn video on Top 10 Programming Languages in 2021 will take you through the most trending and demanding programming languages that you must learn to succeed in your career in 2021.",
+					durac:8,
+					ano:2020,
+					nvis:274000,
+				},
+				{
+					titl:"Top 5 programming language for 2021",
+					refa:"4H7Cp_S31Q0",
+					dscr:"Welcome to another edition for Top 5 programming language for 2021. This year, I have placed some amazing new languages.",
+					durac:7,
+					ano:2020,
+					nvis:135000,
+				},
+				{
+					titl:"Javascript, Python, PHP? Por qual linguagem de programação começar?",
+					refa:"Hxk3XmK_WU4",
+					dscr:"Muita gente me pergunta qual linguagem escolher para começar a programar. Javascript, PHP, python??  Nesse vídeo eu vou te dar as melhores opções.",
+					durac:17,
+					ano:2019,
+					nvis:103000,
+				},
+				{
+					titl:"Top 10 Best Programming Languages for 2021",
+					refa:"ArRcP0UtUXk",
+					dscr:"Are you trying to decide which programming language to learn in 2021? Or are you already working in the area, but intend to keep up to date with the job market? Then follow this article and see the list of the best programming languages ​​to learn today and their advantages.",
+					durac:7,
+					ano:2020,
+					nvis:6000,
+				},
+				{
+					titl:"10 Most Advanced Homes In The World",
+					refa:"bjFvcFjJpE0",
+					dscr:"The top programming languages in 2020. If you're looking for a job in AI or web or mobile development, this video is for you.",
+					durac:8,
+					ano:2020,
+					nvis:887000,
+				},
+				{
+					titl:"The Most Popular Programming Languages & Their Uses (2020)",
+					refa:"rd6SgAIvGjw",
+					dscr:"This video discusses the most popular programming languages and what these programming languages are used for.",
+					durac:11,
+					ano:2020,
+					nvis:83000,
+				},
+				{
+					titl:"What's The Best Programming Language?",
+					refa:"ycpvT9MrEXQ",
+					dscr:"Come join me in this video where we go over the main programming languages around and decide if there really is a best programming language or not.",
+					durac:8,
+					ano:2021,
+					nvis:31000,
+				},
+				{
+					titl:"Top Programming Languages in 2021 | Best Programming Languages to Learn in 2021",
+					refa:"51hYAr7974I",
+					dscr:"These are the top 8 programming languages for you to learn in 2021.",
+					durac:13,
+					ano:2021,
+					nvis:4000,
+				},
+				{
+					titl:"Programming languages that everyone should learn | George Hotz and Lex Fridman",
+					refa:"XlvfHOrF26M",
+					dscr:"These are the programming languages you should learn in 2020",
+					durac:4,
+					ano:2020,
+					nvis:265000,
+				},
+				{
+					titl:"Understand Programming Languages",
+					refa:"_zusEe3GOe8",
+					dscr:"CES 2021 had plenty of amazing tech!f I followed the announcements all week and I’m excited to share some of the best smart home tech and other gadgets. Some of these are available now, while others are more futuristic. Let’s get to it!",
+					durac:9,
+					ano:2016,
+					nvis:133000,
+				},
+				{
+					titl:"Top 4 Dying Programming Languages of 2019 | by Clever Programmer",
+					refa:"H9Ht27r7ROk",
+					dscr:"In this video, we're going to be talking about the top 4 dying programming languages so you can avoid them in the future and have a better career as a software developer in 2019.",
+					durac:12,
+					ano:2019,
+					nvis:847000,
+				},
+				{
+					titl:"What Programming Language Should I Learn First?",
+					refa:"poJfwre2PIs",
+					dscr:"What programming language to learn first? Watch this video to find out.",
+					durac:6,
+					ano:2018,
+					nvis:1544000,
+				},
+				{
+					titl:"Not Everyone Should Code",
+					refa:"EFwa5Owp0-k",
+					dscr:"Want to improve your dwelling, but don’t have any idea how? Here’s a set of completely different gadgets that will bring your place to the next level? Some of them are so mind-blowing, you’ll drop your jaw! Which of them is the coolest to you? ",
+					durac:9,
+					ano:2018,
+					nvis:3116000,
+				},
+				{
+					titl:"How to learn to code (quickly and easily!)",
+					refa:"R2pIutTspQA",
+					dscr:"Turning my apartment into a smart home, that's what I've always wanted to do! SwitchBot enabled me to get more ideas to realize this dream. I hope that my smart apartment tour inspires you or gives you some smart home ideas on how to turn your apartment into a smart home. A lot of people are wondering which smart home products to buy. With these products, you will be able to automate a lot of simple and repetitive tasks in your apartment or house. Of course, there are a lot of products that could still add more functionality, automation, and style to your apartment. There are a lot of options out there!",
+					durac:12,
+					ano:2018,
+					nvis:2968000,
+				},
+				{
+					titl:"The best programming language? | TechLead",
+					refa:"3jGFo9bD9Iw",
+					dscr:"TechLead names his top coding language for software engineers for your consideration.",
+					durac:9,
+					ano:2020,
+					nvis:51000,
+				},
+				{
+					titl:"Programming vs Coding - What's the difference?",
+					refa:"CIRGjwYgdT4",
+					dscr:"Turning your home into a smart home is easier than you think! You may even have some products that are already compatible. Through this video I will let you know what devices you need to get from start to finish to build your smart home.",
+					durac:6,
+					ano:2021,
+					nvis:347000,
+				},
+				{
+					titl:"Types of Programming Languages",
+					refa:"aYjGXzktatA",
+					dscr:"Make your house smarter with these home automation ideas! Follow me on my smart home tour through a typical day filled with automation. I use Alexa and SmartThings for most of these ideas, so you can easily copy them for your own house. ",
+					durac:5,
+					ano:2019,
+					nvis:96000,
+				},
+				{
+					titl:"What is a programming language?",
+					refa:"EGQh5SZctaE",
+					dscr:"When beginning your coding journey, you may find yourself asking, What exactly is a programming language? In this video, we explain.",
+					durac:3,
+					ano:2020,
+					nvis:48000,
+				},
+			];
+			
+		</script>
+		<meta charset="utf-8" />
+		<title>Projeto Coleção de Vídeos do Youtube</title>
+		
+		<style>
+			body{
+				background-color:#c0c0c0;
+			}
+			h2{
+				font:bold 20px arial; color:#a0c0ff; margin:15px 10px 10px 10px;
+			}
+
+			
+			.dscrYT{
+				font:15px/1.4 arial; color:#ffffff; margin:10px;
+			}
+
+			.duracYT{
+				font:bold 14px arial; color:#ffff80; margin:10px;
+			}
+
+			.refaYT{
+				font:bold 16px arial; color:#ff8080; margin:10px;
+			}
+
+			#imgVid{
+				border:1px solid #999999; cursor:pointer;
+			}
+			#imgVid:hover{
+				border-color:#ffffff;
+			}
+			#imgIntro{
+				width:1000px;height:400px;
+			}
+			#txtIntro{
+				color:red;
+			}
+			#item{
+				border-bottom:2px solid #bbbbbb; overflow:auto; margin:5px,
+			}
+			#itemImag,#itemTitulo,#itemDescr,#itemInfo{
+				float:left; font:12px verdana; color:#bbbbbb;
+			}
+			#itemImag{
+				width:220px; margin-right:15px;cursor:pointer;
+			}
+			#itemTitulo{
+				width:160px; font:bold 15px arial; color:#ddeeff; margin-right:15px;
+			}
+			#itemDescr{
+				width:380px; font:12px verdana; color:#ffffff; margin-right:15px;
+			}
+			#itemInfo{
+				width:180px; font:12px verdana; color:#ffffa0; 
+			}
+			#vistaCatalogo{
+				width:1003px; height:500px; background-color:#000000; margin:0px auto; border:1px solid #ffffff;
+			}
+			#vistaIntro{
+				width:1000px; height:500px; background-color:#000000; margin:0px auto; border:1px solid #ffffff;
+			}
+			#itemPai{
+                width: 1002px; height: 480px; margin: 0px auto; border: 1px solid #ffffff; overflow-y: scroll;
+            }
+			#titulo{
+				margin:0px;
+			}
+			
+			#aba{
+				width:300px; float:left;
+			}
+			#vistaVideos{
+				width:1000px; height:500px; background-color:#000000; margin:0px auto;
+			}
+			#ecran{
+				width:700px; height:500px; float:left;
+			}
+			#lista1{
+				width:100%;
+			}
+
+			
+		</style>
+		
+		<script>
+		
+			//refs. para o interface
+			var refItem;
+			var refLista1, refInfo, refEcran;
+			var refVistaCatalogo, refVistaVideos, refVistaIntro;
+
+			//inicialização
+			function inic(){
+				//adquire referências para o interface
+				adqInterf();
+				//carrega as opções na lista drop-down ("lista1") para escolha e visualização de cada vídeo
+				carregaOpcs1();
+				//mostra a vista de introdução
+				mostraVistaIntro();
+			}
+
+			//******** input/output ********
+
+			//adquire referências para o interface
+			function adqInterf(){
+				refItem = document.getElementById("item");
+				refLista1 = document.getElementById("lista1");
+				refInfo = document.getElementById("info");
+				refEcran = document.getElementById("ecran");
+				refVistaIntro = document.getElementById("vistaIntro");
+				refVistaCatalogo = document.getElementById("vistaCatalogo");
+				refVistaVideos = document.getElementById("vistaVideos");
+			}
+			
+			//Função que mostra todos os vídeos na base de dados em estilo catálogo
+			function mostraCatal() {
+				var i,nVid = numVids();
+				for(i=0;i<nVid;i++) {
+					refItem.innerHTML += carregaItem(i);
+				}
+			}
+			
+			//carrega os dados do item (imagem clicável, título, descrição e informação sobre o ano de publicação, o número de visualizações e a duração em minutos) de um vídeo no DIV "item", dado o índice do vídeo na base de dados
+			function carregaItem(iVid){
+				  var codHTML = "";
+				  //imagem
+				  codHTML += '<div id="item" >'
+				  codHTML += '<div id="itemImag" onclick="itemVideo(' + iVid + ')" >';
+				  codHTML += '<img src="https://img.youtube.com/vi/';
+				  codHTML += refaVid(iVid);
+				  codHTML += '/mqdefault.jpg" width="100%" />';
+				  codHTML += '</div>';
+				  //título
+				  codHTML += '<div id="itemTitulo">';
+				  codHTML += titlVid(iVid);
+				  codHTML += '</div>';
+				  //descrição
+				  codHTML += '<div id="itemDescr">';
+				  codHTML += dscrVid(iVid);
+				  codHTML += '</div>';
+				  //informação sobre o ano de publicação, o número de visualizações e a duração em minutos
+				  codHTML += '<div id="itemInfo">';
+				  codHTML += 'publicado no ano de <b>' + anoVid(iVid) + '</b><br />';
+				  codHTML += '<b>' + nvisVid(iVid) + '</b> visualizações<br />';
+				  codHTML += 'duração: <b>' + duracVid(iVid) + 'minutos</b>';
+				  codHTML += '</div>';
+				  codHTML += '</div>';
+				  
+				  //carrega o código HTML no DIV "item"
+				  return codHTML;
+			}
+			
+			//opção de ordenação por títulos
+			function ordemTitulos(){
+				//dispõe a base de dados por ordem alfanumérica (ASCII) dos títulos dos vídeos
+				ordenaTitls();
+				//carrega os dados do item da primeira opção da nova ordenação 
+				refItem.innerHTML = '';
+				mostraCatal();
+			}
+			
+			//opção de ordenação por número de visualizações
+			function ordemNumVis(){
+				//dispõe a base de dados por ordem dos números de visualizações dos vídeos
+				ordenaNvis();
+				//carrega os dados do item da primeira opção da nova ordenação 
+				refItem.innerHTML = '';
+				mostraCatal();
+			}
+			
+			//opção de ordenação por durações
+			function ordemDuracs(){
+				//dispõe a base de dados por ordem dos números de visualizações dos vídeos
+				ordenaDuracs();
+				//carrega os dados do item da primeira opção da nova ordenação 
+				refItem.innerHTML = '';
+				mostraCatal();
+			}
+			
+			//opção de ordenação por anos de publicação
+			function ordemAnos(){
+				//dispõe a base de dados por ordem dos números de visualizações dos vídeos
+				ordenaAnos();
+				//carrega os dados do item da primeira opção da nova ordenação 
+				refItem.innerHTML = '';
+				mostraCatal();
+			}
+
+			//executa, no DIV "ecran", um vídeo do YouTube, dado o respetivo código
+			function execYT(codYT){
+				var codHTML = '';
+				codHTML += '<iframe width="100%" height="100%" ';
+				codHTML += 'src="https://www.youtube.com/embed/';
+				codHTML += codYT;
+				codHTML += '?"></iframe>';
+				refEcran.innerHTML = codHTML;
+			}
+			
+			//mostra toda a informação disponível sobre o vídeo escolhido
+			function mostraVideo(){
+				var codHTML = '', iVidEsc = refLista1.selectedIndex - 1;
+				if(iVidEsc >-1){
+					//constrói o código HTML para os dados sobre o vídeo
+					codHTML += '<h2>' + titlVid(iVidEsc) + '</h2>';
+					codHTML += '<span class="refaYT">' + refaVid(iVidEsc) + '</span>';
+					codHTML += '<p class="dscrYT">' + dscrVid(iVidEsc) + '</p>';
+					codHTML += '<span class="duracYT">duração: ' + duracVid(iVidEsc) + ' minutos</span>';
+					//coloca o código HTML no DIV "info"
+					refInfo.innerHTML = codHTML;
+					//executa, no DIV "ecran", o vídeo do YouTube, dada a respetiva referência
+					execYT(refaVid(iVidEsc));
+				}
+			}
+
+			//carrega as opções na lista drop-down ("lista1") para escolha e visualização de cada vídeo
+			function carregaOpcs1(){
+				var i, nVids = numVids(), codHTML = "";
+				codHTML += '<option>LISTA DE VÍDEOS DO YOUTUBE</option>';
+				for(i=0; i<nVids; i++){
+					codHTML += '<option>' + titlVid(i) + '</option>';
+				}
+				//carrega as opções na lista drop-down ("lista1")
+				refLista1.innerHTML = codHTML;
+			}
+
+			//esconde a vista de vídeos e mostra a vista de catálogo
+			function mostraVistaCatalogo(){
+				//esconde a vista de vídeos
+				refVistaVideos.style.display = "none";
+				//mostra a vista de catálogo
+				refVistaCatalogo.style.display = "block";
+				refVistaIntro.style.display = "none";
+				mostraCatal();
+			}
+			
+			//esconde a vista de catálogo, mostra a vista de vídeos e refaz a lista drop-down
+			function mostraVistaVideos(){
+				//esconde a vista de catálogo 
+				refVistaCatalogo.style.display = "none";
+				//mostra a vista de vídeos
+				refVistaVideos.style.display = "block";
+				refVistaIntro.style.display = "none";
+				//refaz a lista drop-down
+				carregaOpcs1();
+			}
+			
+			function mostraVistaIntro(){
+				//esconde a vista de vídeos
+				refVistaVideos.style.display = "none";
+				//mostra a vista de catálogo
+				refVistaCatalogo.style.display = "none";
+				refVistaIntro.style.display = "block";
+			}
+
+			//mostra o vídeo cujo índice se indica
+			function itemVideo(iVid){
+				//mostra a vista de vídeo
+				mostraVistaVideos();
+				//fazer a escolha automática desse vídeo na drop-down da vista de vídeo ("lista1")
+				refLista1.selectedIndex = iVid + 1;
+				//mostra toda a informação disponível sobre o vídeo escolhido
+				mostraVideo();
+			}
+
+			//********* processos **********
+			
+			//número de vídeos Youtube na base de dados
+			function numVids(){
+				return BDVYT.length;
+			}
+			
+			//título de um vídeo do Youtube, dado o seu índice
+			function titlVid(iVid){
+				return BDVYT[iVid].titl;
+			}
+			
+			//referência de um vídeo do Youtube, dado o seu índice
+			function refaVid(iVid){
+				return BDVYT[iVid].refa;
+			}
+			
+			//descrição de um vídeo do Youtube, dado o seu índice
+			function dscrVid(iVid){
+				return BDVYT[iVid].dscr;
+			}
+			
+			//duração, em minutos inteiros, de um vídeo do Youtube, dado o seu índice
+			function duracVid(iVid){
+				return BDVYT[iVid].durac;
+			}
+			
+			//ano de publicação de um vídeo do Youtube, dado o seu índice
+			function anoVid(iVid){
+				return BDVYT[iVid].ano;
+			}
+			
+			//número de visualizações arredondado por excesso aos milhares de um vídeo do Youtube, dado o seu índice
+			function nvisVid(iVid){
+				return BDVYT[iVid].nvis;
+			}
+			
+			//dispõe a base de dados por ordem alfanumérica (ASCII) dos títulos dos vídeos
+			function ordenaTitls(){
+				BDVYT.sort(function(a,b){
+					if(a.titl < b.titl) return -1; else return 1;
+				});
+			}
+		
+			//dispõe a base de dados por ordem dos números de visualizações dos vídeos
+			function ordenaNvis(){
+				BDVYT.sort(function(a,b){
+					if(a.nvis < b.nvis) return -1; else return 1;
+				});
+			}
+			
+			//dispõe a base de dados por ordem das durações dos vídeos
+			function ordenaDuracs(){
+				BDVYT.sort(function(a,b){
+					if(a.durac < b.durac) return -1; else return 1;
+				});
+			}
+			
+			//dispõe a base de dados por ordem dos anos de publicação dos vídeos
+			function ordenaAnos(){
+				BDVYT.sort(function(a,b){
+					if(a.ano < b.ano) return -1; else return 1;
+				});
+			}
+			
+			
+		</script>
+	</head>
+	<body onload="inic()">
+		<div id="vistaIntro">
+			<button onclick="mostraVistaCatalogo()">Catálogo</button>
+			<button onclick="mostraVistaVideos()">Vídeos</button>
+			<div>
+				<img id="imgIntro" src="https://www.udacity.com/blog/wp-content/uploads/2020/06/HTML_Blog-scaled.jpeg"></img>
+			</div>
+			<div id="titulo">
+				<h1 id="txtIntro">Evolução da Programação</h1>
+			</div>
+		</div>
+		<div id="vistaCatalogo">
+			<button onclick="mostraVistaIntro()">Introdução</button>
+			<button onclick="mostraVistaVideos()">Vídeos</button>
+			<button onclick="ordemTitulos()">Títulos</button>
+			<button onclick="ordemNumVis()">Número de visualizações</button>
+			<button onclick="ordemDuracs()">Durações</button>
+			<button onclick="ordemAnos()">Anos de publicação</button>
+			<div id="itemPai">
+			<div id="item"></div>
+			</div>
+		</div>
+		<div id="vistaVideos">
+			<div id="aba">
+				<button onclick="mostraVistaIntro()">Introdução</button>
+				<button onclick="mostraVistaCatalogo()">catálogo</button>
+				<select id="lista1" onclick="mostraVideo()"></select>
+				<div id="info"></div>
+			</div>
+			<div id="ecran"></div>
+		</div>
+	</body>
+</html>

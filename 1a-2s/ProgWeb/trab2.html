@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<meta charset="utf-8" />
+		<title>Projeto Póker Solitário</title>
+		<style>
+			body {
+				background-color: #708090;
+				font: 18px arial;
+			}
+			.but {
+				width: 103px;
+				height: 80px;
+				margin: 10px 143px 0px 0px;
+				font: bold 22px arial;
+				cursor: pointer;
+				background-color: #c0c0c0;
+			}
+			.but:hover {
+				background-color: #e0e0e0;
+			}
+			.etiq1 {
+				width: 103px;
+				margin: 0px 20px 0px 0px;
+				font: 14px arial;
+				text-align: left;
+				color: #ffffff;
+				float: left;
+			}
+			.dado {
+				border: 3px solid transparent;
+				cursor: pointer;
+			}
+			.dado:hover {
+				border-color: #00c000;
+				background-color: #005020;
+			}
+			.etiqVals {
+				width: 97px;
+				margin: 0px 20px 10px 0px;
+				font: 30px arial;
+				text-align: center;
+				background-color: #005020;
+				color: #a0ffa0;
+				float: left;
+				border: 3px solid;
+				border-color: #002000 #40a080 #40a080 #002000;
+			}
+			#base {
+				width: 495px;
+				margin: 20px auto;
+				font-size: 0px;
+				border: 5px solid;
+				border-color: #202020 #b0b0b0 #b0b0b0 #202020;
+				padding: 20px 0px 20px 20px;
+				background-color: #206040;
+			}
+			#valorMao {
+				width: 465px;
+				margin: 10px 20px 15px 0px;
+				padding: 5px 0px;
+				font: 23px arial;
+				text-align: center;
+				background-color: #005020;
+				color: #eeccaa;
+				float: left;
+				border: 3px solid;
+				border-color: #002000 #40a080 #40a080 #002000;
+			}
+			#butNM {
+				color: #005020;
+			}
+			#butLD {
+				color: #802000;
+			}
+		</style>
+		<script>
+		
+			var sequencia,
+				resultado,
+				lances,
+				debito,
+				saldo,
+				bonus;
+			
+			var valores = [
+					"dado",
+					"dado1",
+					"dado2",
+					"dado3",
+					"dado4",
+					"dado5",
+					"etiq1",
+					"etiqVals",
+					"lances",
+					"debito",
+					"saldo",
+					"bonus",
+					"but",
+					"valorMao",
+					"nova mão",
+					"novo jogo",
+					"pode lançar a primeira mão de dados",
+					"NÃO PODE TROCAR DADO",
+					" pontos",
+					"TERMINADO: ",
+					" jogadas",
+					["lances", "débito", "bónus", "saldo"],
+					[0, 25, 50, 125, 250, 500, 1000],
+					["balda", "dois pares", "três iguais", "fullen", "sequência", "quatro iguais", "cinco iguais"],
+					"#f8f8ff",
+					"#223322",
+					"#cccccc",
+					"#804000",
+					1000,
+					50,
+					50,
+				];
+			
+			//Gera um número aleatório para um dado
+			function numDado() {
+				return Math.ceil(6 * Math.random());
+			}
+			//Utiliza a função numDado para gerar números aleatórios para cada um dos dados e ordena-os 
+			function maoDados() {
+				var i,
+				mao = [];
+				for (i = 0; i < 5; i++) {
+					mao.push(numDado());
+				}
+				mao.sort();
+				
+				return mao;
+			}
+			
+			//Altera o dado n na mao mao para um novo dado aleatório
+			function crescente(mao, n) {
+				mao[n] = numDado();
+				mao.sort();
+			}
+			
+			//verifica se dois dados da mesma mao são iguais
+			function iguais(mao, m, n) {
+				return mao[m] == mao[n];
+			}
+			
+			//Função que inicia um novo jogo, colocando todos os valores nos seus valores por defeito e "limpando" os dados
+			function newGame() {
+				lances = 0;
+				debito = valores[28];
+				saldo = 0;
+				bonus = 0;
+				resultado = 6;
+				for (var i = 0; i < 5; i++)  {
+					joga(adqCanvas(valores[i + 1]), 45, 45, 75, 0);
+				}
+				setInterf(valores[8], lances);
+				setInterf(valores[9], saldo);
+				setInterf(valores[10], bonus);
+				setInterf(valores[11], debito);
+				setInterf(valores[13], valores[16]);
+			}
+			
+			//Função que gera uma nova mão de 5 dados
+			function novaMao() {
+				if (debito > 0) {
+					saldo = valores[29];
+					sequencia = maoDados();
+					resultado = valorMaoDados(sequencia);
+					calcularLance();
+					mostraValorMao();
+					saldo = 0;
+				} else setInterf(valores[13], valores[19] + lances + valores[20]);
+			}
+			
+			//Função que gera um novo dado aleatório
+			function lancaDado(n) {
+				if (debito > 0) {
+					if (resultado < 6) {
+						saldo += valores[30];
+						crescente(sequencia, n);
+						resultado = valorMaoDados(sequencia);
+						calcularLance();
+						mostraValorMao();
+					} else{
+							setInterf(valores[13], valores[17]);
+						}
+				} else {
+						setInterf(valores[13], valores[19] + lances + valores[20]);
+					}
+			}
+			
+			//Função que atualiza as etiquetas do jogo com os valores do lance anterior
+			function calcularLance() {
+				lances++;
+				bonus = valores[22][resultado];
+				debito += bonus - saldo;
+				setInterf(valores[8], lances);
+				setInterf(valores[9], saldo);
+				setInterf(valores[10], bonus);
+				setInterf(valores[11], debito);
+			}
+			
+			//Função que atualiza o valor da mão atual
+			function mostraValorMao() {
+				for (var i = 0; i < 5; i++) {
+					joga(adqCanvas(valores[i + 1]), 45, 45, 75, sequencia[i]);
+					setInterf(valores[13], valores[23][resultado] + ": " + valores[22][resultado] + valores[18]);
+				}
+			}
+			
+			//Verifica se a mao contêm cinco dados iguais 
+			function comparaCinco(mao) {
+				if (mao[0] == mao[1] && mao[0] == mao[2] && mao[0] == mao[3] && mao[0] == mao[4]) return true;
+				return false;
+			}
+			
+			//Verifica se a mao contêm quatro dados iguais 
+			function comparaQuatro(mao) {
+				if (comparaCinco(mao)) {
+					return false;
+				}
+				if (iguais(mao, 0, 1) && iguais(mao, 0, 2) && iguais(mao, 0, 3)) {
+					return true;
+				}
+				if (iguais(mao, 1, 2) && iguais(mao, 1, 3) && iguais(mao, 1, 4)) {
+					return true;
+				}
+				return false;
+			}
+			
+			//Verifica se a mao contêm três dados iguais 
+			function comparaTres(mao) {
+				if (comparaCinco(mao)) {
+					return false;
+				}
+				if (comparaQuatro(mao)) {
+					return false;
+				}
+				if (fullen(mao)) {
+					return false;
+				}
+				if (iguais(mao, 0, 1) && iguais(mao, 0, 2)) {
+					return true;
+				}
+				if (iguais(mao, 1, 2) && iguais(mao, 1, 3)) {
+					return true;
+				}
+				if (iguais(mao, 2, 3) && iguais(mao, 2, 4)) {
+					return true;
+				}
+				return false;
+			}
+			
+			//Verifica se a mao contêm três dados iguais 
+			function comparaDois(mao) {
+				if (comparaCinco(mao)) {
+					return false;
+				}
+				if (comparaQuatro(mao)) {
+					return false;
+				}
+				if (fullen(mao)) {
+					return false;
+				}
+				if (iguais(mao, 0, 1) && iguais(mao, 2, 3)) {
+					return true;
+				}
+				if (iguais(mao, 0, 1) && iguais(mao, 3, 4)) {
+					return true;
+				}
+				if (iguais(mao, 1, 2) && iguais(mao, 3, 4)) {
+					return true;
+				}
+				return false;
+			}
+			
+			//Verifica se a mao contêm um fullen(x,x,y,y,y/x,x,x,y,y)
+			function fullen(mao) {
+				if (comparaCinco(mao)) {
+					return false;
+				}
+				if (comparaQuatro(mao)) {
+					return false;
+				}
+				if (iguais(mao, 0, 1) && iguais(mao, 2, 3) && iguais(mao, 2, 4)) {
+					return true;
+				}
+				if (iguais(mao, 0, 1) && iguais(mao, 0, 2) && iguais(mao, 3, 4)) {
+					return true;
+				}
+				return false;
+			}
+			
+			//Verifica se a mao contêm uma sequência de dados(x,x+1,x+2,x+3,x+4) 
+			function sequencial(mao) {
+				if (mao[1] == mao[0] + 1 && mao[2] == mao[1] + 1 && mao[3] == mao[2] + 1 && mao[4] == mao[3] + 1){
+					return true;
+				}
+				return false;
+			}
+			
+			//Função que verifica o tipo de mão obtido
+			function valorMaoDados(mao) {
+				if (comparaDois(mao)) {
+					return 1;
+				}
+				if (comparaTres(mao)) {
+					return 2;
+				}
+				if (fullen(mao)) {
+					return 3;
+				}
+				if (sequencial(mao)) {
+					return 4;
+				}
+				if (comparaQuatro(mao)) {
+					return 5;
+				}
+				if (comparaCinco(mao)) {
+					return 6;
+				}
+				return 0;
+			}
+			
+			//Função que cria a base do jogo com os dados em branco e as etiquetas por defeito
+			function criarBase() {
+				var i,
+					htmlPag = "";
+				for (i = 0; i < 5; i++) {
+					htmlPag += '<canvas class="' + valores[0] + '" id="' + valores[i + 1] + '" width="88" height="88" onclick="lancaDado(' + i + ')"></canvas>';
+				}
+				htmlPag += '<div id="' + valores[13] + '"></div>';
+				for (i = 0; i < 4; i++) {
+					htmlPag += '<div class="' + valores[6] + '">' + valores[21][i] + "</div>";
+				}
+				for (i = 0; i < 4; i++) {
+					htmlPag += '<div class="' + valores[7] + '" id="' + valores[8 + i] + '"></div>';
+				}
+				htmlPag += '<button class="' + valores[12] + '" id="butNM" onclick="novaMao()">' + valores[14] + "</button>";
+				htmlPag += '<button class="' + valores[12] + '" id="butLD" onclick="newGame()">' + valores[15] + "</button>";
+				setInterf("base", htmlPag);
+			}
+			
+			//Função que cria um retângulo que simula os 5 dados
+			function desenhaRect(cGraf, x, y, dim, raio, cor) {
+				var L = dim - 2 * raio,
+					Q = Math.PI / 2;
+				var X = x - dim / 2;
+				Y = y - dim / 2;
+				cGraf.beginPath();
+				cGraf.moveTo(X + raio, Y);
+				cGraf.lineTo(X + raio + L, Y);
+				cGraf.arc(X + raio + L, Y + raio, raio, -Q, 0);
+				cGraf.lineTo(X + dim, Y + raio + L);
+				cGraf.arc(X + raio + L, Y + raio + L, raio, 0, Q);
+				cGraf.lineTo(X + raio, Y + dim);
+				cGraf.arc(X + raio, Y + raio + L, raio, Q, 2 * Q);
+				cGraf.lineTo(X, Y + raio);
+				cGraf.arc(X + raio, Y + raio, raio, 2 * Q, 3 * Q);
+				cGraf.fillStyle = cor;
+				cGraf.fill();
+			}
+			
+			//Função que desenha os circulos em cada dado para simular pintas
+			function desenhaCirc(cGraf, x, y, diam, cor) {
+				cGraf.fillStyle = cor;
+				cGraf.beginPath();
+				cGraf.arc(x, y, diam / 2, 0, 2 * Math.PI);
+				cGraf.fill();
+			}
+			
+			//Função que inicializa os retangulos vazios no inicio de cada jogo
+			function joga(cGraf, x, y, dim, valor) {
+				var pts = [
+					{ x: x, y: y },
+					{ x: x - dim / 4, y: y - dim / 3.5 },
+					{ x: x - dim / 4, y: y },
+					{ x: x - dim / 4, y: y + dim / 3.5 },
+					{ x: x + dim / 4, y: y - dim / 3.5 },
+					{ x: x + dim / 4, y: y },
+					{ x: x + dim / 4, y: y + dim / 3.5 },
+				];
+				var frms = [[], [0], [1, 6], [0, 1, 6], [1, 3, 4, 6], [0, 1, 3, 4, 6], [1, 2, 3, 4, 5, 6]];
+				desenhaRect(cGraf, x - dim / 20, y - dim / 20, dim, dim / 5, valores[24]);
+				desenhaRect(cGraf, x + dim / 20, y + dim / 20, dim, dim / 5, valores[25]);
+				desenhaRect(cGraf, x, y, dim, dim / 5, valores[26]);
+				for (i = 0; i < valor; i++) {
+					desenhaCirc(cGraf, pts[frms[valor][i]].x, pts[frms[valor][i]].y, dim / 5, valores[27]);
+				}
+			}
+			
+			//Função que retorna os elementos da interface
+			function adqInterf(refId) {
+				return document.getElementById(refId);
+			}
+			
+			//Função que define os elementos da interface
+			function setInterf(referenc, novoValor) {
+				adqInterf(referenc).innerHTML = novoValor;
+			}
+			
+			//Função que permite desenhar graficos nos elementos canvas
+			function adqCanvas(canvas) {
+				return adqInterf(canvas).getContext("2d");
+			}
+			
+			//Função a ser corrida inicialmente
+			function inic() {
+				criarBase();
+				newGame();
+			}
+			
+		</script>
+	</head>
+	<body onload="inic()">
+		<div id="base"></div>
+	</body>
+</html>
