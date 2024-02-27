@@ -1,0 +1,7 @@
+blockChain.chain
+blockChain.miner
+blockChain.p2p.gui
+blockChain.p2p.miner
+myUtils
+safetyRate
+safetyRateGUI

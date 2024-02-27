@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+        img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+        style-src  'self' 'unsafe-inline' *">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/Control.FullScreen.css" />
+    <link rel="stylesheet" href="css/easy-button.css" />
+    <title>Raul Lino</title>
+    <link rel="shortcut icon" type="image/png" href="res/app_logo_no_letters.png">
+</head>
+
+<!-- loads website with home view -->
+<body>
+    <!-- fixed navbar -->
+    <nav class="w-100 navbar navbar-expand-md fixed-top pb-1" style="background-color: #f3f4f6;">
+        <div class="w-100 flex-column">
+            <div class="w-100 title-container">
+                <h1 id="main-title"></h1>
+                <h2 id="raul-lino-title"></h2>
+            </div>
+            <hr class="w-100 yellow-divisor p-0 m-0"/>
+        </div>
+    </nav>
+
+    <!-- content page -->
+    <div>
+        <!-- home view -->
+        <div id="home" class="px-3" style="display: none;">
+            <h1 id="page-title-home" class="page-title"></h1>
+            <div id="paragraphs-home"></div>
+        </div>
+
+        <!-- biography view -->
+        <div id="bio" class="px-3" style="display: none;">
+            <h1 id="page-title-bio" class="page-title"></h1>
+            <div>
+                <div class="text-center">
+                    <img id="bio-img" src="img/raul-lino.jpg" />
+                </div>
+                <div id="paragraphs-bio" class="mt-2">
+                </div>
+            </div>
+        </div>
+        
+        <!-- map view-->
+        <div id="mapPage" style="display: none;">
+            <h1 id="page-title-map" class="page-title px-3"></h1>
+            <div id="mapContainer">
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <!-- settings view -->
+        <div id="settings" class="px-3" style="display: none;">
+            <h1 id="page-title-settings" class="page-title"></h1>
+            <div class="form-group">
+                <label id="language-label" for="language-select"></label>
+                <select id="language-select" class="custom-select"></select>
+            </div>
+        </div>
+
+        <!-- iteractive points description view -->
+        <div id="desc" class="pag" style="display: none;">
+            <div id="iterPDesc" class="container">
+            </div>
+            <div class="container">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div id="iterPImg" class="carousel-inner">
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span id="previous" class="sr-only"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span id="next" class="sr-only"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- iteractive points image view -->
+        <div id="amplifiedImage" class="pag" style="display: none;">
+        </div>
+    </div>
+
+    <!-- fixed footer -->
+    <footer class="w-100 fixed-bottom pt-0" style="background-color: #f3f4f6;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="navigator col p-0 flex-column d-flex align-items-center">
+                    <hr id="homeLine" class="transparent-divisor" />
+                    <a href="#" class="navbar-brand d-flex align-items-center" onclick="changeView('home')">
+                        <img class="navigator-icons" src="img/icons/home.svg" />
+                    </a>
+                </div>
+                <div class="navigator col p-0 flex-column d-flex align-items-center">
+                    <hr id="bioLine" class="transparent-divisor" />
+                    <a href="#" class="navbar-brand d-flex align-items-center" onclick="changeView('bio')">
+                        <img class="navigator-icons" src="img/icons/nota_biografica.svg" />
+                    </a>
+                </div>
+                <div class="navigator col p-0 flex-column d-flex align-items-center">
+                    <hr id="mapPageLine" class="transparent-divisor" />
+                    <a href="#" class="navbar-brand d-flex align-items-center" onclick="changeView('mapPage')">
+                        <img class="navigator-icons" src="img/icons/mapa.svg" />
+                    </a>
+                </div>
+                <div class="navigator col p-0 flex-column d-flex align-items-center">
+                    <hr id="settingsLine" class="transparent-divisor"/>
+                    <a href="#" class="navbar-brand d-flex align-items-center" onclick="changeView('settings')">
+                        <img class="navigator-icons" src="img/icons/realidade_aumentada.svg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script section -->
+    <script src="js/leaflet.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/propper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Control.FullScreen.js"></script>
+    <script src="js/sweatalert.min.js"></script>
+    <script src="js/easy-button.js"></script>
+</body>
+
+</html>

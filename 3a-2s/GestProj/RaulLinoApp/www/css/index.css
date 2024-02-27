@@ -1,0 +1,172 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+@font-face {
+    font-family: "RaulLinoFonte";
+    src: url("../RaulLinoFonte.ttf");
+}
+
+/* elements */
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    user-select: none;                          /* required to use webkit-user-select */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #f3f4f6;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    padding-top: 88px;
+    padding-bottom: 80px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'RaulLinoFonte', sans-serif;
+}
+
+p {
+    text-align: justify;
+    font-size: 22px;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* classes */
+.yellow-divisor {
+    background-color: #e2d301;
+    height: 2px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.transparent-divisor {
+    background-color: transparent;
+    height: 2px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px 0 10px;
+}
+
+.page-title {
+    text-align: left;
+    font-size: 28px;
+}
+
+.navigator-icons {
+    height: 50px;
+    width: 50px;
+}
+
+.car-img {
+    @media (max-width: 300px) {
+        height: 125px;
+    }
+
+    @media (min-width: 300px) {
+        height: 175px;
+    }
+
+    @media (min-width: 820px) {
+        height: 200px;
+    }
+
+    @media (min-width: 1024px) {
+        height: 275px;
+    }
+
+    @media (min-width: 2048px) {
+        height: 425px;
+    }
+}
+
+/* css to customize Leaflet default styles  */
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: black;
+    color: white;
+    opacity: 0.5;
+}
+
+.icon-popup {
+    opacity: 1;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* identifiers */
+#bio-img {
+
+    @media (max-width: 300px) {
+        height: 100px;
+    }
+
+    @media (min-width: 300px) {
+        height: 150px;
+    }
+
+    @media (min-width: 820px) {
+        height: 175px;
+    }
+
+    @media (min-width: 1024px) {
+        height: 250px;
+    }
+
+    @media (min-width: 2048px) {
+        height: 400px;
+    }
+}
+
+#content {
+    margin-left: 12px;
+}
+
+#map {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70vh;
+}
+
+#main-title {
+    font-size: 48px;
+}
+
+#raul-lino-title{
+    font-size: 32px;
+    color: #04c263;
+}
