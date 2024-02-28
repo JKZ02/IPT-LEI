@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ICT.MM.DAL.DB.ScenarioDevice>
+
+@{
+    ViewData["Title"] = "ScenarioDevices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cenário Dispositivo</h1>
+
+@if ((User.FindFirst("Role").Value == "Admin") || (User.FindFirst("Role").Value == "Root")){
+    <p>
+        <a asp-action="Create">Criar novo</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Device)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scenario)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.ManufacturedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastMaintenanceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaintenanceDueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OriginalState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentState)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-controller="Devices" asp-route-id="@item.Id_Device">
+                    @Html.DisplayFor(modelItem => item.Device.Name)
+                </a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-controller="Scenarios" asp-route-id="@item.Id_Scenario">
+                    @Html.DisplayFor(modelItem => item.Scenario.Name)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastMaintenanceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaintenanceDueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OriginalState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentState)
+            </td>
+            
+            <td>
+                    @if ((User.FindFirst("Role").Value == "Admin") || (User.FindFirst("Role").Value == "Root"))
+                    {
+                        @Html.ActionLink("Editar", "Edit", new { idScen = item.Id_Scenario, idDevi = item.Id_Device})<br />
+
+                        @Html.ActionLink("Eliminar", "Delete", new { idScen = item.Id_Scenario, idDevi = item.Id_Device }) <br />
+                    }
+                    @Html.ActionLink("Detalhes", "Details", new { idScen = item.Id_Scenario, idDevi = item.Id_Device })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

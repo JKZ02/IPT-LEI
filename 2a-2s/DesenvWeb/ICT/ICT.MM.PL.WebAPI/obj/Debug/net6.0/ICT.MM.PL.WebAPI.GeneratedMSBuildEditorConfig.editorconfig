@@ -1,0 +1,164 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ICT.MM.PL.WebAPI
+build_property.RootNamespace = ICT.MM.PL.WebAPI
+build_property.ProjectDir = A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.PL.WebAPI\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.PL.WebAPI
+build_property._RazorSourceGeneratorDebug = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/AccountManagement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudE1hbmFnZW1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/AccountManagement/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudE1hbmFnZW1lbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/AccountManagement/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudE1hbmFnZW1lbnRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/AccountManagement/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudE1hbmFnZW1lbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/AccountManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudE1hbmFnZW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Account/Forbidden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3JiaWRkZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Account/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RyYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Devices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Devices/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Devices/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Devices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Devices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/DeviceTypes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlVHlwZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/DeviceTypes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlVHlwZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/DeviceTypes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlVHlwZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/DeviceTypes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlVHlwZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/DeviceTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlVHlwZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/ScenarioDevices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9EZXZpY2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/ScenarioDevices/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9EZXZpY2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/ScenarioDevices/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9EZXZpY2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/ScenarioDevices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9EZXZpY2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/ScenarioDevices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9EZXZpY2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Scenarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Scenarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Scenarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Scenarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Scenarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NlbmFyaW9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Shared/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFib3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Shared/Credits.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENyZWRpdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Escola/2a2s/DWEB/IESFinal/implementation/ICT/ICT.MM.PL.WebAPI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

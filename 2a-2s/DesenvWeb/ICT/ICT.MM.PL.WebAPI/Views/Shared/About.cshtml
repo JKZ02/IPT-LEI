@@ -1,0 +1,93 @@
+﻿@{
+
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<style>
+    .split {
+        height: 92%;
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 8%;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    /* Control the left side */
+    .left {
+        left: 0;
+        background-color: #111;
+        color:white;
+    }
+
+    /* Control the right side */
+    .right {
+        right: 0;
+        background-color: red;
+        color:black;
+    }
+
+    .centerinfo {
+        font-size: 14px;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    /* If you want the content centered horizontally and vertically */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+        /* Style the image inside the centered container, if needed */
+        .centered img {
+            width: 150px;
+            border-radius: 50%;
+        }
+</style>
+
+
+<html>
+<head>
+    <title>Sobre</title>
+</head>
+<body>
+    <div class="split left">
+        <div class="centered">
+            <img src="https://cdn.discordapp.com/attachments/780835143497678868/1020723366560288778/20220503_213820.jpg" alt="Vasco Araújo">
+            <h2>Vasco Araújo</h2>
+            <p>aluno23055@ipt.pt</p>
+        </div>
+    </div>
+    <div class="centerinfo">
+        <img width="200px" src="https://cdn.discordapp.com/attachments/780835143497678868/1020730140445126666/download.png" alt="IPT">
+        <br />
+        <br />
+        <br />
+        <br />
+        <strong>
+            Licenciatura em <br />
+            Engenharia Informática
+            <br /><br /><br />Desenvolvido no âmbito
+            <br />de<br />Desenvolvimento Web
+            <br /><br /><br />
+            <a class="nav-link" asp-controller="Home" asp-action="Credits">Créditos e Referências</a>
+    </div>
+
+    <div class="split right">
+        <div class="centered">
+            <img src="https://cdn.discordapp.com/attachments/780835143497678868/1020724011124134001/20220917_165215.jpg" alt="André Almeida">
+            <h2>André Almeida</h2>
+            <p>aluno23049@ipt.pt</p>
+        </div>
+    </div>
+<</body>
+</html>

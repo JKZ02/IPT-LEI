@@ -1,0 +1,59 @@
+﻿@model ICT.MM.DAL.DB.ScenarioDevice
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Criar</h1>
+
+<h4>Cenário Dispositivo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id_Scenario" class="control-label"></label>
+                <select asp-for="Id_Scenario" class ="form-control" asp-items="ViewBag.Id_Scenario"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_Device" class="control-label"></label>
+                <select asp-for="Id_Device" class ="form-control" asp-items="ViewBag.Id_Device"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ManufacturedDate" class="control-label"></label>
+                <input asp-for="ManufacturedDate" class="form-control" />
+                <span asp-validation-for="ManufacturedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastMaintenanceDate" class="control-label"></label>
+                <input asp-for="LastMaintenanceDate" class="form-control" />
+                <span asp-validation-for="LastMaintenanceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaintenanceDueDate" class="control-label"></label>
+                <input asp-for="MaintenanceDueDate" class="form-control" />
+                <span asp-validation-for="MaintenanceDueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OriginalState" class="control-label"></label>
+                <input asp-for="OriginalState" class="form-control" />
+                <span asp-validation-for="OriginalState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentState" class="control-label"></label>
+                <input asp-for="CurrentState" class="form-control" />
+                <span asp-validation-for="CurrentState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar á Lista</a>
+</div>
+

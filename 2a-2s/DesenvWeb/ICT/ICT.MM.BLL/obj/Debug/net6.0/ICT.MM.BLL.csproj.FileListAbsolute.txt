@@ -1,0 +1,17 @@
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\bin\Debug\net6.0\ICT.MM.BLL.deps.json
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\bin\Debug\net6.0\ICT.MM.BLL.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\bin\Debug\net6.0\ICT.MM.BLL.pdb
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\bin\Debug\net6.0\ICT.MM.Core.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\bin\Debug\net6.0\ICT.MM.DAL.DB.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\bin\Debug\net6.0\ICT.MM.Core.pdb
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\bin\Debug\net6.0\ICT.MM.DAL.DB.pdb
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.csproj.AssemblyReference.cache
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.GeneratedMSBuildEditorConfig.editorconfig
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.AssemblyInfoInputs.cache
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.AssemblyInfo.cs
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.csproj.CoreCompileInputs.cache
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.csproj.CopyComplete
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\refint\ICT.MM.BLL.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ICT.MM.BLL.pdb
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.BLL\obj\Debug\net6.0\ref\ICT.MM.BLL.dll

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "LT1O+i0V/PLu2zMBzfTF7blhflAkb2z0iKV9Deg2Ol4=",
+  "Source": "ICT.MM.PL.WebAPI",
+  "BasePath": "_content/ICT.MM.PL.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ICT.MM.PL.WebAPI\\wwwroot",
+      "Source": "ICT.MM.PL.WebAPI",
+      "ContentRoot": "A:\\Escola\\2a2s\\DWEB\\IESFinal\\implementation\\ICT\\ICT.MM.PL.WebAPI\\wwwroot\\",
+      "BasePath": "_content/ICT.MM.PL.WebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "A:\\Escola\\2a2s\\DWEB\\IESFinal\\implementation\\ICT\\ICT.MM.PL.WebAPI\\wwwroot\\css\\Style.css",
+      "SourceId": "ICT.MM.PL.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "A:\\Escola\\2a2s\\DWEB\\IESFinal\\implementation\\ICT\\ICT.MM.PL.WebAPI\\wwwroot\\",
+      "BasePath": "_content/ICT.MM.PL.WebAPI",
+      "RelativePath": "css/Style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Style.css"
+    }
+  ]
+}

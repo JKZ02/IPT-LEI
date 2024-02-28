@@ -1,0 +1,91 @@
+﻿@using System.Security.Claims
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SOA for Safety</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SOA for Safety</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="About">Sobre</a>
+                        </li>
+                    </div>
+                    <div class="navbar-text">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div style="float:left">
+                                <p class="nav-link text-dark" style="padding-right:10px; padding-top:7px">Olá, @User.Identity.Name</p>
+                            </div>
+                        }
+                        <div class="dropdown" style="float:left">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-solid fa-bars"></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Devices">Devices</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="DeviceTypes">DeviceTypes</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Scenarios">Scenarios</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="ScenarioDevices">ScenarioDevices</a>
+                                    @if (User.FindFirst("Role").Value == "Root")
+                                    {
+                                        <a class="dropdown-item" asp-action="Index" asp-controller="AccountManagement">Gerir</a>
+                                    }
+
+                                    <a class="dropdown-item" asp-action="ChangePassword" asp-controller="Account" asp-route-username="@User.Identity.Name">Mudar Palavra Passe</a>
+                                    <a class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a>
+                                }
+                                else
+                                {
+                                    <a class="dropdown-item" asp-action="Login" asp-controller="Account">Login</a>
+                                    <a class="dropdown-item" asp-action="Registration" asp-controller="Account">Registrar</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @* imports View code *@
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            &copy; 2022 - SOA for Safety
+
+
+
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

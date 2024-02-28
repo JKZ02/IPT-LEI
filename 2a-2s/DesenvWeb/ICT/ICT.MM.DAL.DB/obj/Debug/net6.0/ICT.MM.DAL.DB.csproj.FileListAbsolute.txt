@@ -1,0 +1,12 @@
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\bin\Debug\net6.0\ICT.MM.DAL.DB.deps.json
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\bin\Debug\net6.0\ICT.MM.DAL.DB.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\bin\Debug\net6.0\ICT.MM.DAL.DB.pdb
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ICT.MM.DAL.DB.csproj.AssemblyReference.cache
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ICT.MM.DAL.DB.GeneratedMSBuildEditorConfig.editorconfig
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ICT.MM.DAL.DB.AssemblyInfoInputs.cache
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ICT.MM.DAL.DB.AssemblyInfo.cs
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ICT.MM.DAL.DB.csproj.CoreCompileInputs.cache
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ICT.MM.DAL.DB.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\refint\ICT.MM.DAL.DB.dll
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ICT.MM.DAL.DB.pdb
+A:\Escola\2a2s\DWEB\IESFinal\implementation\ICT\ICT.MM.DAL.DB\obj\Debug\net6.0\ref\ICT.MM.DAL.DB.dll
