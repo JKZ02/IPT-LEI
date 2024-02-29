@@ -1,6 +1,6 @@
 # Arquitetura de Computadores
 <br>
-Stack: Assembly 32-Bits
+Stack: Assembly 16-Bits
 <br>
 Skills developed: Problem Solving, Solution Structuring, Critical Thinking
 <br>
